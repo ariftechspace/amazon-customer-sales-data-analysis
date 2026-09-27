@@ -1,4 +1,4 @@
-# Amazon E-Commerce Data Analysis
+# Amazon Customer and Sales Analysis
 
 ## Overview
 
