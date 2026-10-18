@@ -1,10 +1,30 @@
 # Amazon Customer and Sales Analysis
 
+![Dashboard](dashboard.png)
+
+## SQL analysis and Power BI dashboard
+- Loaded the 1 million orders into SQLite and wrote 9 SQL queries (joins, window functions, CTEs) to answer business questions. The queries and results are in the notebook.
+- Built a Power BI dashboard with revenue, orders, average order value and return-rate KPIs, filterable by category, device and payment method (`amazon_dashboard.pbix`).
+
+### Findings from SQL
+* Electronics generates 66.2% of revenue (query 2).
+* Repeat customers are 45% of customers (274,070 of 603,815) but generate 67.1% of revenue, while one-time customers account for 32.9% (query 7).
+* Return rate is almost the same across payment methods, categories and discount bands: 11.0% to 11.9% (queries 4 and 5).
+* Average rating is 3.93 at every shipping time from 1 to 6 days, so shipping time and ratings are unrelated (query 9).
+* Orders with a discount of 40% or more have a slightly lower average rating (3.85) than other discount bands (3.95 to 3.97) (query 5).
+
+### Limitations
+The dataset shows very little variation across locations and payment methods, and the first month (March 2024) is only partial.
+
+---
+
 ## Overview
 
 This project analyzes Amazon e-commerce transaction data to uncover insights related to revenue, customer behavior, pricing strategies, shipping performance, and seller effectiveness.
 
 The goal is to demonstrate practical data analysis and visualization skills using Python without applying machine learning models.
+
+
 
 ---
 
@@ -130,9 +150,9 @@ Downloaded directly using KaggleHub.
 
 ## Key Insights
 
-- Revenue is concentrated among a small number of categories and brands.
-- Discounts strongly influence final selling prices.
-- Faster shipping is generally associated with higher customer ratings.
-- Customer behavior varies across devices and payment methods.
-- Regional and seller performance differences reveal growth opportunities.
-- Return patterns highlight areas for operational improvement.
+- Electronics generates about two-thirds of revenue (66.2%).
+- Repeat customers generate 67.1% of revenue.
+- Higher discounts lower the final price, with a moderate correlation (-0.29).
+- Higher-priced products tend to have higher ratings (correlation 0.33).
+- Shipping time shows no relationship with ratings (correlation about 0.00002).
+- Return rate is about 11.6% overall and is nearly the same across payment methods, categories and discount bands.
